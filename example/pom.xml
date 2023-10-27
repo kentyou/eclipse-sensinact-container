@@ -12,7 +12,7 @@
 
   <properties>
     <sensinact.version>0.0.2-SNAPSHOT</sensinact.version>
-    <jetty.version>11.0.13</jetty.version>
+    <jetty.version>11.0.16</jetty.version>
   </properties>
 
   <dependencies>
