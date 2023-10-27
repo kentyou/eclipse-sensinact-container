@@ -1,0 +1,5 @@
+# Ignore example folder
+example/
+
+# Test directory
+tmp/

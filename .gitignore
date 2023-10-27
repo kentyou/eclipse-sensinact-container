@@ -1,0 +1,15 @@
+# Test folder
+tmp/
+
+# Binaries
+*.zip
+*.jar
+*.tar
+*.gz
+*.tgz
+
+# IDEs
+.vscode
+.project
+.classpath
+.settings
