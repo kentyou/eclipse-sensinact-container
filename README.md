@@ -76,6 +76,8 @@ The final environment is available in the [`example`](example/) folder.
        sensinact:$VERSION
    ```
 
+   **Note:** You can also use the provided composition file: `docker compose -f example/compose.yaml up -d`
+
 7. Test the HTTP northbound:
    ```bash
    # List registered providers
