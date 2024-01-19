@@ -1,5 +1,5 @@
 #####################################################################
-# Copyright (c) 2023 Kentyou
+# Copyright (c) 2024 Kentyou
 #
 # This program and the accompanying materials are made
 # available under the terms of the Eclipse Public License 2.0
@@ -28,7 +28,7 @@ RUN unzip "/opt/assembly-*.zip" -d /opt/sensinact && \
 
 # ------------------------------------------------------------------------------
 # Second stage: minimal image to run Eclipse sensiNact
-FROM  gcr.io/distroless/java17-debian12
+FROM gcr.io/distroless/java17-debian12
 
 COPY --from=dl /opt/sensinact /opt/sensinact
 WORKDIR /opt/sensinact/
