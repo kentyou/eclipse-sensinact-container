@@ -28,7 +28,7 @@ RUN unzip "/opt/assembly-*.zip" -d /opt/sensinact && \
 
 # ------------------------------------------------------------------------------
 # Second stage: minimal image to run Eclipse sensiNact
-FROM gcr.io/distroless/java17-debian12
+FROM eclipse-temurin:17-jre-alpine
 
 COPY --from=dl /opt/sensinact /opt/sensinact
 WORKDIR /opt/sensinact/
