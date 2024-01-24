@@ -32,4 +32,4 @@ FROM eclipse-temurin:17-jre-alpine
 
 COPY --from=dl /opt/sensinact /opt/sensinact
 WORKDIR /opt/sensinact/
-ENTRYPOINT [ "/usr/bin/java", "-Dsensinact.config.dir=configuration", "-jar", "launch/launcher.jar" ]
+ENTRYPOINT [ "java", "-Dsensinact.config.dir=configuration", "-jar", "launch/launcher.jar" ]
