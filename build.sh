@@ -12,6 +12,10 @@
 #   Kentyou - initial implementation
 ######################################################################
 
+IMAGE=${IMAGE:-"ghcr.io/kentyou/eclipse-sensinact-container/sensinact"}
 VERSION=${VERSION:="0.0.2-SNAPSHOT"}
-docker pull $(grep FROM Dockerfile | grep distroless | cut -d ' ' -f 2-)
-docker build --no-cache -t "sensinact:$VERSION" --build-arg "version=$VERSION" .
+for base in $(grep FROM Dockerfile | cut -d ' ' -f 2 )
+do
+    docker pull "$base"
+done
+docker build --no-cache -t "$IMAGE:$VERSION" --build-arg "version=$VERSION" .
