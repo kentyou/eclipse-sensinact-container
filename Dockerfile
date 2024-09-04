@@ -28,7 +28,8 @@ RUN unzip "/opt/assembly-*.zip" -d /opt/sensinact && \
 
 # ------------------------------------------------------------------------------
 # Second stage: minimal image to run Eclipse sensiNact
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:17-jre-noble
+LABEL org.opencontainers.image.source="https://github.com/kentyou/eclipse-sensinact-container"
 
 COPY --from=dl /opt/sensinact /opt/sensinact
 WORKDIR /opt/sensinact/
