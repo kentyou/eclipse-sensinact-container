@@ -12,7 +12,13 @@
 ######################################################################
 
 # First stage: download and unzip the Eclipse sensiNact distribution
-FROM maven AS dl
+FROM amd64/maven:3.9-eclipse-temurin-17 AS maven-amd64
+
+FROM arm64v8/maven:3.9-eclipse-temurin-17 AS maven-arm64
+
+FROM arm32v7/maven:3.9-eclipse-temurin-17 AS maven-arm
+
+FROM maven-${TARGETARCH} AS dl
 
 ARG version=0.0.2-SNAPSHOT
 
@@ -28,7 +34,14 @@ RUN unzip "/opt/assembly-*.zip" -d /opt/sensinact && \
 
 # ------------------------------------------------------------------------------
 # Second stage: minimal image to run Eclipse sensiNact
-FROM eclipse-temurin:17-jre-noble
+FROM amd64/eclipse-temurin:17-jre-noble AS amd64
+
+FROM arm64v8/eclipse-temurin:17-jre-noble AS arm64
+
+FROM arm32v7/eclipse-temurin:17-jre-noble AS arm
+
+FROM $TARGETARCH AS build
+
 LABEL org.opencontainers.image.source="https://github.com/kentyou/eclipse-sensinact-container"
 
 COPY --from=dl /opt/sensinact /opt/sensinact
