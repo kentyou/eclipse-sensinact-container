@@ -10,7 +10,7 @@ on:
       ref:
         description: 'The git reference to check out and build'
         required: false
-        default: 'main'
+        default: '<workflow branch>'
         type: string
       push:
         description: 'Whether to push the built images'
@@ -25,7 +25,7 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
-          ref: ${{ inputs.ref }}
+          ref: ${{ ( inputs.ref == '<workflow branch>' ) && github.ref_name || inputs.ref }}
       
       - name: Set up QEMU
         uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf # v3.2.0
