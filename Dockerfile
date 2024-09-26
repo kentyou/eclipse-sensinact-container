@@ -22,6 +22,10 @@ FROM maven-${TARGETARCH} AS dl
 
 ARG version=0.0.2-SNAPSHOT
 
+COPY ICOS /tmp/ICOS
+
+RUN mvn -f /tmp/ICOS/pom.xml package
+
 RUN apt update && apt install -y unzip && apt clean
 RUN mvn dependency:get \
     -DremoteRepositories="https://repo.eclipse.org/content/groups/sensinact/" \
@@ -31,6 +35,10 @@ RUN mvn dependency:copy \
     -DoutputDirectory=/opt/
 RUN unzip "/opt/assembly-*.zip" -d /opt/sensinact && \
     chmod +x /opt/sensinact/start.sh
+    
+RUN cp -R /tmp/ICOS/target/repository/* /opt/sensinact/repository/
+RUN cp /tmp/ICOS/features/* /opt/sensinact/features
+
 
 # ------------------------------------------------------------------------------
 # Second stage: minimal image to run Eclipse sensiNact
@@ -44,6 +52,8 @@ FROM $TARGETARCH AS build
 
 LABEL org.opencontainers.image.source="https://github.com/kentyou/eclipse-sensinact-container"
 
+ENV JVM_ARGS=
+
 COPY --from=dl /opt/sensinact /opt/sensinact
 WORKDIR /opt/sensinact/
-ENTRYPOINT [ "java", "-Dsensinact.config.dir=configuration", "-jar", "launch/launcher.jar" ]
+ENTRYPOINT java $JVM_ARGS -Dsensinact.config.dir=configuration -jar launch/launcher.jar

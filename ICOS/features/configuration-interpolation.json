@@ -1,0 +1,6 @@
+{
+  "id":"de.jena.sensinact:de.jena.sensinact.icos.ilsa.runtime:1.0.0-SNAPSHOT",
+  "bundles":[
+	  { "id": "org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.8" }
+  ]
+}

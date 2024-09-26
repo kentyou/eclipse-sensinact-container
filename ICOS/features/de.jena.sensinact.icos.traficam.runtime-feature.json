@@ -1,0 +1,21 @@
+{
+  "id":"de.jena.sensinact:de.jena.sensinact.icos.traficam.runtime:1.0.0-SNAPSHOT",
+  "bundles":[
+	{ "id": "com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.16.1" },
+	{ "id": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.1" },
+	{ "id": "de.jena.sensinact:de.jena.sensinact.mqtt.generic.bridge:1.0.0-SNAPSHOT" },
+	{ "id": "de.jena.sensinact:de.jena.sensinact.mqtt.generic.message:1.0.0-SNAPSHOT" },
+	{ "id": "de.jena.sensinact:de.jena.traficam.model:1.0.0-SNAPSHOT" },
+	{ "id": "de.jena.sensinact:de.jena.traficam.sensinact:1.0.0-SNAPSHOT" },
+	{ "id": "de.jena.sensinact:de.jena.traficam.sensinact.model:0.0.0" },
+	{ "id": "org.eclipse.emfcloud:emfjson-jackson:2.2.0" },
+	{ "id": "org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5" },
+	{ "id": "org.geckoprojects.messaging:org.gecko.adapter.mqtt:1.1.0-SNAPSHOT" },
+	{ "id": "org.geckoprojects.messaging:org.gecko.adapter.mqtt.common:1.0.0-SNAPSHOT" },
+	{ "id": "org.geckoprojects.emf.utils:org.gecko.emf.json:1.5.1" },
+	{ "id": "org.geckoprojects.messaging:org.gecko.osgi.messaging:3.2.0-SNAPSHOT" },
+	{ "id": "org.geckoprojects.utils:org.gecko.util.common:1.2.0.202401231920" },
+	{ "id": "org.geckoprojects.utils:org.gecko.util.pushstream:1.2.0.202401231920" },
+	{ "id": "org.yaml:snakeyaml:2.2" }  
+  ]
+}
