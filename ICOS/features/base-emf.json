@@ -1,0 +1,16 @@
+{
+  "id":"de.jena.sensinact:base-emf:1.0.0-SNAPSHOT",
+  "bundles":[
+    { "id": "org.eclipse.emf:org.eclipse.emf.common:2.29.0" },
+    { "id": "org.eclipse.emf:org.eclipse.emf.ecore:2.35.0" },
+    { "id": "org.eclipse.platform:org.eclipse.equinox.common:3.14.0" },
+    { "id": "org.eclipse.platform:org.eclipse.equinox.registry:3.10.200" },
+    { "id": "org.eclipse.platform:org.eclipse.equinox.supplement:1.10.700" },
+    { "id": "org.geckoprojects.eclipse.core:de.dim.eclipse.core.runtime:3.14.0-SNAPSHOT" },
+    { "id": "org.geckoprojects.eclipse.core:de.dim.eclipse.osgi:3.12.50-SNAPSHOT" },
+    { "id": "org.geckoprojects.eclipse.core:de.dim.equinox.common:3.9.0-SNAPSHOT" },
+    { "id": "org.geckoprojects.eclipse.core:org.eclipse.core.runtime:3.14.0-SNAPSHOT" },
+    { "id": "org.geckoprojects.emf.utils:org.eclipse.emf.ecore.fragment:2.0.0-SNAPSHOT" },
+    { "id": "org.osgi:org.osgi.service.log:1.5.0" }
+  ]
+}
