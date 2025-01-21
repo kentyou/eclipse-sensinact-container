@@ -15,7 +15,6 @@
 	{ "id": "org.eclipse.emf:org.eclipse.emf.ecore.change:2.15.0" },
 	{ "id": "org.eclipse.emfcloud:emfjson-jackson:2.2.0" },
 	{ "id": "org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5" },
-  { "id": "org.geckoprojects.emf:org.gecko.emf.osgi.component.minimal:6.2.0" },
 	{ "id": "org.geckoprojects.emf.utils:org.eclipse.emf.ecore.fragment:2.0.0-SNAPSHOT" },
   { "id": "org.geckoprojects.emf.utils:org.eclipse.m2m.qvt.oml:3.10.8.v20231126-0839" },
   { "id": "org.geckoprojects.emf.utils:org.eclipse.m2m.qvt.oml.common:3.10.2.v20231126-0839" },
