@@ -38,6 +38,7 @@ RUN unzip "/opt/assembly-*.zip" -d /opt/sensinact && \
     
 RUN cp -R /tmp/ICOS/target/repository/* /opt/sensinact/repository/
 RUN cp /tmp/ICOS/features/* /opt/sensinact/features
+RUN cp -R /tmp/ICOS/configuration/* /opt/sensinact/configuration
 
 
 # ------------------------------------------------------------------------------
@@ -53,7 +54,8 @@ FROM $TARGETARCH AS build
 LABEL org.opencontainers.image.source="https://github.com/kentyou/eclipse-sensinact-container"
 
 ENV JVM_ARGS=
+ENV ICOS_NODE_TYPE=
 
 COPY --from=dl /opt/sensinact /opt/sensinact
 WORKDIR /opt/sensinact/
-ENTRYPOINT java $JVM_ARGS -Dsensinact.config.dir=configuration -jar launch/launcher.jar
+ENTRYPOINT java $JVM_ARGS -Dsensinact.config.dir=configuration/$ICOS_NODE_TYPE -jar launch/launcher.jar
